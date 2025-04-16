@@ -8,7 +8,7 @@ This repository contains a demo implementation of a contract that interacts with
 
 ```bash
 git clone https://github.com/mento-protocol/hackathon-demo.git
-cd mento-demo
+cd hackathon-demo
 ```
 
 2. Install dependencies:
@@ -18,6 +18,12 @@ forge install
 ```
 
 3. Set up environment variables:
+
+```bash
+cp .env.example .env
+```
+
+4. Add your private key to the .env file:
 
 ```bash
 # For Celo mainnet RPC URL
@@ -62,7 +68,7 @@ forge script deploy/DeployBrokerDemo.s.sol --rpc-url $RPC_URL --broadcast
 3. Verify the contract:
 
 ```bash
-forge forge verify-contract $CONTRACT_ADDRESS  --chain celo --rpc-url https://forno.celo.org
+forge verify-contract $CONTRACT_ADDRESS  --chain celo --rpc-url https://forno.celo.org
 ```
 
 ## Running the Demo Script
