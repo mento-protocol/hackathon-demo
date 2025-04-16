@@ -9,7 +9,8 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract BrokerDemoScript is Script {
     // Address of the already deployed BrokerDemo contract
-    address public constant BROKER_DEMO = 0x4A4BFC4b0CEAe568B2BcB883a2cFA5AB58690BE1; // TODO: Replace with actual deployed address
+    address public constant BROKER_DEMO =
+        0x4A4BFC4b0CEAe568B2BcB883a2cFA5AB58690BE1; // TODO: Replace with actual deployed address
 
     function setUp() public {}
 
@@ -43,7 +44,7 @@ contract BrokerDemoScript is Script {
         // Perform a swap of 1 cUSD
         uint256 amountIn = 1e16; // 1 cUSD
         console.log("Swapping", amountIn, "cUSD for cEUR...");
-        broker.swapCUSDForCEUR(amountIn);
+        broker.swapCUSDForCEUR(amountIn, 0);
 
         // Get final balances
         uint256 finalCUSDBalance = ERC20(cUSD).balanceOf(user);
